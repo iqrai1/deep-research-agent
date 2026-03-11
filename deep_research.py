@@ -1,3 +1,4 @@
+import os
 import gradio as gr
 from dotenv import load_dotenv
 from research_manager import ResearchManager
@@ -10,7 +11,7 @@ async def run(query: str):
         yield chunk
 
 
-with gr.Blocks(theme=gr.themes.Default(primary_hue="sky")) as ui:
+with gr.Blocks() as ui:
     gr.Markdown("# Deep Research")
     query_textbox = gr.Textbox(label="What topic would you like to research?")
     run_button = gr.Button("Run", variant="primary")
@@ -19,5 +20,7 @@ with gr.Blocks(theme=gr.themes.Default(primary_hue="sky")) as ui:
     run_button.click(fn=run, inputs=query_textbox, outputs=report)
     query_textbox.submit(fn=run, inputs=query_textbox, outputs=report)
 
-ui.launch(inbrowser=True)
 
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 7860))
+    ui.launch(server_name="0.0.0.0", server_port=port, theme=gr.themes.Default(primary_hue="sky"))
