@@ -2,7 +2,7 @@
 
 An AI-powered multi-agent research assistant that takes any topic, searches the web, synthesizes findings, and delivers a detailed report — straight to your inbox.
 
-**Live Demo:** [deep-research-agent-production-0885.up.railway.app](https://deep-research-agent-production-0885.up.railway.app)
+**Live Demo:** [https://deep-research-agent-production-0885.up.railway.app/](https://deep-research-agent-production-0885.up.railway.app/)
 
 ---
 
